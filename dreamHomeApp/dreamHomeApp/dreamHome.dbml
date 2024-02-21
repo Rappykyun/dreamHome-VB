@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dreamHomeDB" Class="dreamHomeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=INFINIX\MSSQLSERVER03;Initial Catalog=dreamHomeDB;Integrated Security=True" SettingsObjectName="WindowsApplication1.My.MySettings" SettingsPropertyName="dreamHomeDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Branch" Member="Branches">
+    <Type Name="Branch">
+      <Column Name="branchNo" Type="System.String" DbType="VarChar(255) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="street" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="postcode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.loadBranch" Method="loadBranch">
+    <ElementType Name="loadBranchResult">
+      <Column Name="branchNo" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="street" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="postcode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.insertBranch" Method="insertBranch">
+    <Parameter Name="branchNo" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="street" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="city" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="postcode" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.filterBranch" Method="filterBranch">
+    <Parameter Name="city" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="filterBranchResult">
+      <Column Name="branchNo" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="street" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="city" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="postcode" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.deleteBranch" Method="deleteBranch">
+    <Parameter Name="branchNo" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
